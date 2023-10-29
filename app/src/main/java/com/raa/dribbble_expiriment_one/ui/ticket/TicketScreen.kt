@@ -1,7 +1,9 @@
 package com.raa.dribbble_expiriment_one.ui.ticket
 
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
@@ -33,7 +35,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -45,6 +49,7 @@ import com.raa.dribbble_expiriment_one.lightGrey
 import com.raa.dribbble_expiriment_one.orange
 import com.raa.dribbble_expiriment_one.ticketsPurlplebck
 import com.raa.dribbble_expiriment_one.ui.ticket.composables.Chip
+import com.raa.dribbble_expiriment_one.ui.ticket.composables.TicketAppBar
 import com.raa.dribbble_expiriment_one.ui.ticket.composables.TravelCard
 
 
@@ -88,36 +93,7 @@ fun TicketScreen(navController: NavController) {
     Scaffold(
         containerColor = ticketsPurlplebck,
         topBar = {
-            TopAppBar(
-                modifier = Modifier.padding(5.dp),
-                colors = TopAppBarDefaults.mediumTopAppBarColors(containerColor = ticketsPurlplebck),
-                navigationIcon = {
-                    IconButton(onClick = { navController.popBackStack() }) {
-                        Icon(
-                            imageVector = Icons.Outlined.ArrowBack,
-                            contentDescription = null,
-                            tint = Color.White
-                        )
-                    }
-                },
-                title = {
-                    Text(
-                        text = "Choose ticket",
-                        color = Color.White,
-                        textAlign = TextAlign.Center,
-                        fontSize = 14.sp,
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                },
-                actions = {
-                    Icon(
-                        modifier = Modifier.size(30.dp),
-                        painter = painterResource(id = R.drawable.ic_sort),
-                        contentDescription = "Menu",
-                        tint = Color.White
-                    )
-                }
-            )
+            TicketAppBar(navController)
         }
     ) {
         Box(
@@ -151,6 +127,7 @@ fun TicketScreen(navController: NavController) {
                         .offset(xOffset - width, yOffset)
                         .width(width)
                         .height(height)
+                        .border(color = darkPurple, shape = RoundedCornerShape(topStart = 22.dp, bottomStart = 22.dp), width = 1.5f.dp)
                         .background(
                             color = orange,
                             shape = RoundedCornerShape(topStart = 22.dp, bottomStart = 22.dp)
