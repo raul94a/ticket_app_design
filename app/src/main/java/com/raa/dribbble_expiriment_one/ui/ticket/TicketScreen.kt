@@ -127,12 +127,16 @@ fun TicketScreen(navController: NavController) {
                         .offset(xOffset - width, yOffset)
                         .width(width)
                         .height(height)
-                        .border(color = darkPurple, shape = RoundedCornerShape(topStart = 22.dp, bottomStart = 22.dp), width = 1.5f.dp)
+                        .border(
+                            color = darkPurple,
+                            shape = RoundedCornerShape(topStart = 22.dp, bottomStart = 22.dp),
+                            width = 1.5f.dp
+                        )
                         .background(
                             color = orange,
                             shape = RoundedCornerShape(topStart = 22.dp, bottomStart = 22.dp)
                         ),
-                    onClick = {navController.navigate("finish") }) {
+                    onClick = { navController.navigate("finish") }) {
                     Icon(imageVector = Icons.Outlined.KeyboardArrowRight, contentDescription = null)
                 }
 
