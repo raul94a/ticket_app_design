@@ -1,11 +1,8 @@
-package com.raa.dribbble_expiriment_one.ui.finish
+package com.raa.dribbble_expiriment_one.ui.qrCode
 
-import android.graphics.Paint.Align
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -16,12 +13,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowBack
 import androidx.compose.material.icons.outlined.DateRange
-import androidx.compose.material.icons.outlined.KeyboardArrowDown
 import androidx.compose.material.icons.outlined.KeyboardArrowRight
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material3.Card
@@ -51,8 +46,6 @@ import com.raa.dribbble_expiriment_one.darkGrey
 import com.raa.dribbble_expiriment_one.darkPurple
 import com.raa.dribbble_expiriment_one.orange
 import com.raa.dribbble_expiriment_one.ticketsPurlplebck
-import com.raa.dribbble_expiriment_one.ui.ticket.TravelList
-import com.raa.dribbble_expiriment_one.ui.ticket.composables.Chip
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -146,7 +139,7 @@ fun QrCard() {
         Column {
 
             Column(modifier = Modifier.padding(horizontal = 20.dp, vertical = 20.dp)) {
-                Text(text = "John Kovalsky", color = darkPurple, fontWeight = FontWeight.Bold)
+                Text(text = "Raúl Albín", color = darkPurple, fontWeight = FontWeight.Bold)
                 Spacer(modifier = Modifier.height(12.dp))
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(text = "SOA", fontSize = 12.sp)

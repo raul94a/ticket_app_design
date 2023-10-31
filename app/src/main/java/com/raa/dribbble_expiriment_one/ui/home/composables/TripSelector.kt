@@ -9,7 +9,6 @@ import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.rememberTransition
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
-import androidx.compose.animation.core.animateFloat
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -29,14 +28,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -54,12 +50,8 @@ fun TripSelector() {
 
         Row(verticalAlignment = Alignment.CenterVertically) {
             Spacer(modifier = Modifier.width(50.dp))
-
-            // thing
-
-            TravelPlaceholder()
+            TripSelectorIcons()
             Spacer(modifier = Modifier.width(15.dp))
-            // from - to
             Column(
                 verticalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier.fillMaxHeight(1.1f)
@@ -67,7 +59,7 @@ fun TripSelector() {
                 Column {
 
                     Text(text = "Southampton", color = Color.White, fontSize = 30.sp)
-                    Text(text = "Airptort", color = Color.LightGray)
+                    Text(text = "Airport", color = Color.LightGray)
                 }
 
                 Column {
@@ -104,7 +96,7 @@ fun OrangeCircle() {
 
 
 @Composable
-fun TravelPlaceholder() {
+fun TripSelectorIcons() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxHeight()
